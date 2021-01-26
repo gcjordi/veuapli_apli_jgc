@@ -22,16 +22,16 @@ def abrir_blocNotas():
     sub.call('start notepad.exe', shell=True)
     sleep(1.5)
     auto.write('Estoy lista para escribir tu texto Jordi')
-    lupita = voz.init()
-    velocidad = lupita.getProperty('rate')
-    lupita.setProperty('rate', velocidad-25)
-    lupita.setProperty('voice', 'TTS_MS_ES-MX_SABINA_11.0') # voz con acento mexicano
-    lupita.say('Estoy lista para escribir tu texto Jordi')
-    lupita.runAndWait()
+    estel = voz.init()
+    velocidad = estel.getProperty('rate')
+    estel.setProperty('rate', velocidad-25)
+    estel.setProperty('voice', 'TTS_MS_ES-ES_HELENA_11.0') # voz con acento español
+    estel.say('Estoy lista para escribir tu texto Jordi')
+    estel.runAndWait()
 
 
 def abrir_youtube():
-    sub.call([r'C:/Users/gcjor\Desktop/codisprogramar/codisprogramats_enmarxa/repos_integrats_vsc_github/voiceassist_apli_jgc/navegar.bat'])
+    sub.call([r'']) # pegar ruta con /
     return None
 
 
@@ -44,7 +44,7 @@ with sr.Microphone() as source:
 
 try:
     # Si se entendió el audio
-    comando = r.recognize_google(audio, language='es-MX')
+    comando = r.recognize_google(audio, language='es-ES')
     print("Creo que dijiste: " + comando)
     interpretar(comando) # lo que se debe hacer con el comando de audio
 
