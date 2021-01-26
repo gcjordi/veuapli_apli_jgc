@@ -21,24 +21,24 @@ def interpretar(comando_de_audio):
 def abrir_blocNotas():
     sub.call('start notepad.exe', shell=True)
     sleep(1.5)
-    auto.write('Estoy lista para escribir tu texto Esimio Impune')
+    auto.write('Estoy lista para escribir tu texto Jordi')
     lupita = voz.init()
     velocidad = lupita.getProperty('rate')
     lupita.setProperty('rate', velocidad-25)
     lupita.setProperty('voice', 'TTS_MS_ES-MX_SABINA_11.0') # voz con acento mexicano
-    lupita.say('Estoy lista para escribir tu texto Esimio Impune')
+    lupita.say('Estoy lista para escribir tu texto Jordi')
     lupita.runAndWait()
 
 
 def abrir_youtube():
-    sub.call([r'[direccion al archivo batch]/navegar.bat'])
+    sub.call([r'C:/Users/gcjor\Desktop/codisprogramar/codisprogramats_enmarxa/repos_integrats_vsc_github/voiceassist_apli_jgc/navegar.bat'])
     return None
 
 
 # escuchar el audio con el micrófono de mi computadora
 r = sr.Recognizer()
 with sr.Microphone() as source:
-    print("¡Ordena!")
+    print("¡Dime!")
     audio = r.listen(source)
 
 
